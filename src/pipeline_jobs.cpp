@@ -461,7 +461,7 @@ bool RelionJob::saveJobSubmissionScript(std::string newfilename, std::string out
 		replacing["XXXcoresXXX"] = floatToString(ncores);
 		replacing["XXXdedicatedXXX"] = floatToString(ndedi);
 		replacing["XXXnodesXXX"] = floatToString(nnodes);
-		replacing["XXXnameXXX"] = outputname;
+		replacing["XXXnameXXX"] = jobname;
 		replacing["XXXerrfileXXX"] = outputname + "run.err";
 		replacing["XXXoutfileXXX"] = outputname + "run.out";
 		replacing["XXXqueueXXX"] = joboptions["queuename"].getString();
