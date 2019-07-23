@@ -509,7 +509,7 @@ bool RelionJob::saveJobSubmissionScript(std::string newfilename, std::string out
 				{
 					// For multiple relion mpi commands: add multiple lines from the XXXcommandXXX template
 					if ((commands[icom]).find("relion_") != std::string::npos &&
-							((commands[icom]).find("_mpi`") != std::string::npos || nmpi==1) ) // if there are no MPI programs, then still use XXXcommandXXX once
+							((commands[icom]).find("_mpi`") != std::string::npos ) // if there are no MPI programs, then still use XXXcommandXXX once; 190623 remove the || nmpi==1 condition to fit better with our submission system
 					{
 						std::string from = "XXXcommandXXX";
 						std::string to = commands[icom];
