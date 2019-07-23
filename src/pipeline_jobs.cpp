@@ -443,6 +443,15 @@ bool RelionJob::saveJobSubmissionScript(std::string newfilename, std::string out
 			std::cout << " It is more efficient to make the number of cores (i.e. mpi*threads) a multiple of the minimum number of dedicated cores per node " << std::endl;
 		}
 
+		std::string jobname = outputname;
+		for (int i = 0; i < jobname.size(); i++)
+		{
+            if (jobname[i] == '/')
+            {
+                jobname[i] = '-';
+            }
+        }
+
 		fh.clear(); // reset eof if happened...
 		fh.seekg(0, std::ios::beg);
 		std::string line;
